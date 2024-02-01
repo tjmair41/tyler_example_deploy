@@ -24,11 +24,16 @@ jobs:
         uses: actions/setup-python@v4
         with:
             python-version: '3.x'
-          
       - name: Install build package
         id: requirements
         run: |
-            python -m pip install --upgrade build
+          python -m pip install --upgrade build
+
+      - name: Build test package
+        id: build
+        if: steps.requirements.outcome == 'success'
+        run: |
+          python -m build
 
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
