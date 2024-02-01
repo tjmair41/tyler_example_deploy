@@ -4,7 +4,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='example_pypi_package',
+    name='tyler_example_deploy',
     author='Tom Chen',
     author_email='tomchen.org@gmail.com',
     description='Example PyPI (Python Package Index) Package',
